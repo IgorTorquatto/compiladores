@@ -1,7 +1,0 @@
-No terminal, na pasta do projeto, executar o seguinte comando para rodar o compilador:
-
-python mini_lang.py
-
-Após executar o compilador temos um novo arquivo na pasta chamado "saida.py", execute esse arquivo com o seguinte comando:
-
-python saida.py

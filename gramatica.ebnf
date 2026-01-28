@@ -1,0 +1,88 @@
+<program> = { <statement> }
+
+<block> = "{" { <statement> } "}"
+
+<statement> =
+      <variable-decl> ";"
+    | <assignment> ";"
+    | <print-statement> ";"
+    | <return-statement> ";"
+    | <if-statement>
+    | <while-statement>
+    | <function-decl>
+    | <block>
+
+<function-decl> =
+    "def" <identifier> "(" [ <formal-params> ] ")" ":" <type> <block>
+
+<formal-params> =
+    <formal-param> { "," <formal-param> }
+
+<formal-param> =
+    <identifier> ":" <type>
+
+<if-statement> =
+    "if" "(" <expression> ")" <block> [ "else" <block> ]
+
+<while-statement> =
+    "while" "(" <expression> ")" <block>
+
+<return-statement> =
+    "return" <expression>
+
+<print-statement> =
+    "print" <expression>
+
+<variable-decl> =
+    "var" <identifier> ":" <type> "=" <expression>
+
+<assignment> =
+    <identifier> "=" <expression>
+
+<expression> =
+    <simple-expression> [ <relational-op> <simple-expression> ]
+
+<simple-expression> =
+    <term> { <additive-op> <term> }
+
+<term> =
+    <factor> { <multiplicative-op> <factor> }
+
+<factor> =
+      <literal>
+    | <identifier>
+    | <function-call>
+    | "(" <expression> ")"
+
+<function-call> =
+    <identifier> "(" [ <actual-params> ] ")"
+
+<actual-params> =
+    <expression> { "," <expression> }
+
+<relational-op> =
+    "<" | ">" | "==" | "!=" | "<=" | ">="
+
+<additive-op> =
+    "+" | "-" | "or"
+
+<multiplicative-op> =
+    "*" | "/" | "and"
+
+<type> =
+    "int" | "real" | "bool" | "void"
+
+<identifier> =
+    ( "_" | <letter> ) { "_" | <letter> | <digit> }
+
+<letter> =
+    "a" | ... | "z" | "A" | ... | "Z"
+
+<digit> =
+    "0" | ... | "9"
+
+<literal> =
+    <integer-literal> | "true" | "false"
+
+<integer-literal> =
+    <digit> { <digit> }

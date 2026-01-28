@@ -1,9 +1,6 @@
-x = 5
-y = 0
-while (x > 0):
-    y = (y + x)
-    x = (x - 1)
-if (y > 10):
-    print(y)
-else:
-    print(0)
+def soma(a,b):
+    return (a + b)
+
+x = 3
+y = 4
+print(soma(x,y))

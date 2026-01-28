@@ -1,13 +1,7 @@
-var x : int = 5;
-var y : int = 0;
-
-while (x > 0) {
-    y = y + x;
-    x = x - 1;
+def soma(a, b) : int {
+    return a + b;
 }
 
-if (y > 10) {
-    print y;
-} else {
-    print 0;
-}
+var x : int = 3;
+var y : int = 4;
+print soma(x, y);
